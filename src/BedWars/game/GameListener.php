@@ -310,8 +310,15 @@ class GameListener implements Listener
             if(in_array($player->getName(), array_keys(array_merge($game->players, $game->spectators)))){
                 $game->getPlayerCache($player->getName())->load();
                 $game->quit($player);
+		$this->clearInv($player);
             }
         }
+    }
+	
+    public function clearInv(Player $player){
+        $player->getInventory()->clearAll();
+	$player->getArmorInventory()->clearAll();
+	$player->getCusorInventory()->clearAll();
     }
 
     /**
