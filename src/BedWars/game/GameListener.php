@@ -296,7 +296,7 @@ class GameListener implements Listener
             }
         }else{
             foreach(array_merge($playerGame->getPlayers(), $playerGame->getSpectators()) as $p){
-                $p->sendMessage($playerTeam->getColor() . $player->getName() . TextFormat::GRAY . " §l»§r " . TextFormat::WHITE . substr($message, 1));
+                $p->sendMessage($playerTeam->getColor() . $player->getName() . TextFormat::GRAY . " §l»§r " . TextFormat::WHITE . $message);
             }
         }
     }
@@ -310,8 +310,15 @@ class GameListener implements Listener
             if(in_array($player->getName(), array_keys(array_merge($game->players, $game->spectators)))){
                 $game->getPlayerCache($player->getName())->load();
                 $game->quit($player);
+		$this->clearInv($player);
             }
         }
+    }
+	
+    public function clearInv(Player $player){
+        $player->getInventory()->clearAll();
+	$player->getArmorInventory()->clearAll();
+	$player->getCusorInventory()->clearAll();
     }
 
     /**
