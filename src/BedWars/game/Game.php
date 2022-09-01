@@ -328,7 +328,7 @@ class Game
     }
 
     public function start() : void{
-         $this->broadcastMessage(TextFormat::GREEN . "§l§b» §r§6Bed§gWars§3 has started! §bCollect resources from generators to purchase items from the shop, or to upgrade your team from team upgrades! §eDestroy all opponents' beds! §cLast alive wins! §6Good Luck!");
+         $this->broadcastMessage(TextFormat::GREEN . " §l§b» §r§6Bed§gWars§3 has started! §bCollect resources from generators to purchase items from the shop, or to upgrade your team from team upgrades! §eDestroy all opponents' beds! §cLast alive wins! §6Good Luck!");
          $this->state = self::STATE_RUNNING;
          foreach($this->players as $player){
             $player->sendTitle("");
@@ -395,7 +395,7 @@ class Game
             if(isset($rotation[3])){
                 $entity->setRotation(intval($rotation[3]), 0); //todo: round yaw
             }
-            $entity->setNameTag(TextFormat::AQUA . "ITEM SHOP\n" . TextFormat::BOLD . TextFormat::YELLOW . "TAP TO USE");
+            $entity->setNameTag(TextFormat::AQUA . "§bItem Shop \n" . TextFormat::BOLD . TextFormat::RESET . "Click Me!");
             $entity->setNameTagAlwaysVisible(true);
             $entity->spawnToAll();
 
@@ -408,7 +408,7 @@ class Game
             if(isset($rotation[3])){
                 $entity->setRotation(intval($rotation[3]), 0);
             }
-            $entity->setNameTag(TextFormat::AQUA . "TEAM UPGRADES\n" . TextFormat::BOLD . TextFormat::YELLOW . "TAP TO USE");
+            $entity->setNameTag(TextFormat::AQUA . "§gUpgrades \n" . TextFormat::BOLD . TextFormat::RESET . "Click Me!");
             $entity->setNameTagAlwaysVisible(true);
             $entity->spawnToAll();
 
@@ -421,7 +421,7 @@ class Game
      */
     public function join(Player $player) : void{
          if($this->state !== self::STATE_LOBBY){
-             $player->sendMessage(BedWars::PREFIX . TextFormat::YELLOW . "§l§5»§r §cArena is full! Try again later!");
+             $player->sendMessage(BedWars::PREFIX . TextFormat::YELLOW . " §l§5»§r §cThe arena you are trying to join is full! Please try again later!");
              return;
          }
 
@@ -429,7 +429,7 @@ class Game
          $player->teleport($this->lobby);
          $this->players[$player->getName()] = $player;
 
-         $this->broadcastMessage(TextFormat::GRAY . TextFormat::BOLD .  "§l§3»§r " . TextFormat::RESET . TextFormat::AQUA . $player->getName() . TextFormat::YELLOW . " has joined " . TextFormat::GOLD . "(" . TextFormat::AQUA .  count($this->players) . TextFormat::YELLOW . "/" . TextFormat::AQUA .  $this->maxPlayers . TextFormat::GOLD .  ")");
+         $this->broadcastMessage(TextFormat::GRAY . TextFormat::BOLD .  " §l§3»§r " . TextFormat::RESET . TextFormat::AQUA . $player->getName() . TextFormat::YELLOW . " has joined " . TextFormat::GOLD . "(" . TextFormat::AQUA .  count($this->players) . TextFormat::YELLOW . "/" . TextFormat::AQUA .  $this->maxPlayers . TextFormat::GOLD .  ")");
          $player->getInventory()->clearAll();
          $player->getArmorInventory()->clearAll();
          $player->getCraftingGrid()->clearAll();
@@ -499,9 +499,9 @@ class Game
 
         $playerTeam = $this->plugin->getPlayerTeam($player);
 
-        $this->broadcastMessage(TextFormat::BOLD . TextFormat::RED . "§5» " . TextFormat::RESET .  $team->getColor() . $team->getName() . "'s " . TextFormat::GRAY . "bed was destroyed by " . $playerTeam->getColor() . $player->getName());
+        $this->broadcastMessage(TextFormat::BOLD . TextFormat::RED . " §5» " . TextFormat::RESET .  $team->getColor() . $team->getName() . "'s " . TextFormat::GRAY . "bed was destroyed by " . $playerTeam->getColor() . $player->getName());
         foreach($team->getPlayers() as $player){
-            $player->sendTitle(TextFormat::RED . "BED DESTROYED!", TextFormat::GRAY . "You will no longer respawn!", 10);
+            $player->sendTitle(TextFormat::RED . TextFormat::BOLD . "BED DESTROYED!", TextFormat::GRAY . "You will no longer respawn!", 10);
         }
     }
  
@@ -549,7 +549,7 @@ class Game
     private function checkLobby() : void{
         if(!$this->starting && count($this->players) >= $this->minPlayers && !$this->isForcedStart()) {
             $this->starting = true;
-            $this->broadcastMessage(TextFormat::GREEN . TextFormat::BOLD . "§l§5» §r§bCountdown started!");
+            $this->broadcastMessage(TextFormat::GREEN . TextFormat::BOLD . " §l§5» §r§bCountdown started!");
         }
     }
 
@@ -582,7 +582,7 @@ class Game
             if($cause instanceof EntityDamageByEntityEvent){
             $damager = $cause->getDamager();
             if($damager instanceof Player && $this->plugin->getPlayerTeam($damager) !== null){
-                $this->broadcastMessage(TextFormat :: BOLD . "§l§5» §r" . $this->plugin->getPlayerTeam($player)->getColor() . $player->getName() . " " . TextFormat::GRAY . "was killed by " . $this->plugin->getPlayerTeam($damager)->getColor() . $damager->getName());
+                $this->broadcastMessage(TextFormat :: BOLD . " §l§5» §r" . $this->plugin->getPlayerTeam($player)->getColor() . $player->getName() . " " . TextFormat::GRAY . "was killed by " . $this->plugin->getPlayerTeam($damager)->getColor() . $damager->getName());
                }
             }
             break;
@@ -590,12 +590,12 @@ class Game
             if($cause instanceof EntityDamageByChildEntityEvent){
                 $damager = $cause->getDamager();
                 if($damager instanceof Player && $this->plugin->getPlayerTeam($damager) !== null){
-                $this->broadcastMessage(TextFormat :: BOLD . "§l§5» §r" . $this->plugin->getPlayerTeam($player)->getColor() . $player->getName() . " " . TextFormat::GRAY . "was shot by " . $this->plugin->getPlayerTeam($damager)->getColor() . $damager->getName());
+                $this->broadcastMessage(TextFormat :: BOLD . " §l§5» §r" . $this->plugin->getPlayerTeam($player)->getColor() . $player->getName() . " " . TextFormat::GRAY . "was shot by " . $this->plugin->getPlayerTeam($damager)->getColor() . $damager->getName());
                 }
             }
             break;
             case EntityDamageEvent::CAUSE_FIRE;
-            $this->broadcastMessage(TextFormat :: BOLD . "§l§5» §r" . $playerTeam->getColor() . $player->getName() . " " . TextFormat::GRAY . "went up in flameS");
+            $this->broadcastMessage(TextFormat :: BOLD . " §l§5» §r" . $playerTeam->getColor() . $player->getName() . " " . TextFormat::GRAY . "went up in flameS");
             break;
             case EntityDamageEvent::CAUSE_VOID;
             $spawnPos = $this->teamInfo[$playerTeam->getName()]['SpawnPos'];
@@ -603,16 +603,16 @@ class Game
             $player->teleport(new Vector3($player->getPosition()->getX(), $spawn->getY() + 10, $player->getPosition()->getZ()));
             break;
             case EntityDamageEvent::CAUSE_ENTITY_EXPLOSION;
-            $this->broadcastMessage(TextFormat :: BOLD . "§l§5» §r" . $playerTeam->getColor() . $player->getName() . " " . TextFormat::GRAY . "was killed in an explosion");
+            $this->broadcastMessage(TextFormat :: BOLD . " §l§5» §r" . $playerTeam->getColor() . $player->getName() . " " . TextFormat::GRAY . "was killed in an explosion");
             break;
             case EntityDamageEvent::CAUSE_FALL;
-            $this->broadcastMessage(TextFormat :: BOLD . "§l§5» §r" . $playerTeam->getColor() . $player->getName() . " " . TextFormat::GRAY . "fell from high place");
+            $this->broadcastMessage(TextFormat :: BOLD . " §l§5» §r" . $playerTeam->getColor() . $player->getName() . " " . TextFormat::GRAY . "fell from high place");
             break;
             case EntityDamageEvent::CAUSE_FIRE;
-            $this->broadcastMessage(TextFormat :: BOLD . "§l§5» §r" . $playerTeam->getColor() . $player->getName() . " " . TextFormat::GRAY . "went up in flames");
+            $this->broadcastMessage(TextFormat :: BOLD . " §l§5» §r" . $playerTeam->getColor() . $player->getName() . " " . TextFormat::GRAY . "went up in flames");
             break;
             case EntityDamageEvent::CAUSE_SUFFOCATION;
-            $this->broadcastMessage(TextFormat :: BOLD . "§l§5» §r" . $playerTeam->getColor() . $player->getName() . " " . TextFormat::GRAY . "suffocated in a wall");
+            $this->broadcastMessage(TextFormat :: BOLD . " §l§5» §r" . $playerTeam->getColor() . $player->getName() . " " . TextFormat::GRAY . "suffocated in a wall");
             break;
         }
 
@@ -705,7 +705,7 @@ class Game
                  if ($this->starting || $this->isForcedStart()) {
                      if(count($this->players) < $this->minPlayers && !$this->isForcedStart()) {
                          $this->starting = false;
-                         $this->broadcastMessage(TextFormat::YELLOW . "§l§5» §r§bCountdown stopped!");
+                         $this->broadcastMessage(TextFormat::YELLOW . " §l§5» §r§bCountdown stopped!");
                          $this->startTime = $this->startTimeStatic;
                      }
 
@@ -717,10 +717,10 @@ class Game
 
                      switch ($this->startTime) {
                          case 30;
-                             $this->broadcastMessage(TextFormat::AQUA . "§l§5» §r§bStarting in: " . TextFormat::GREEN . "30");
+                             $this->broadcastMessage(TextFormat::AQUA . " §l§5» §r§bStarting in: " . TextFormat::GREEN . "30");
                              break;
                          case 15;
-                             $this->broadcastMessage(TextFormat::AQUA . "§l§5» §r§bStarting in: " . TextFormat::GREEN . "15");
+                             $this->broadcastMessage(TextFormat::AQUA . " §l§5» §r§bStarting in: " . TextFormat::GREEN . "15");
                              break;
                          case 5;
                          case 4;
@@ -772,16 +772,16 @@ class Game
 
                      if (isset($this->deadQueue[$player->getName()])) {
                          $player->getInventory()->clearAll();
-                         $player->sendTitle(TextFormat::RED . "You died!", TextFormat::YELLOW . "You will respawn in: " . TextFormat::RED . $this->deadQueue[$player->getName()] . " " . TextFormat::YELLOW . "seconds!");
-                         $player->sendMessage(TextFormat::YELLOW . "You will respawn in: " . TextFormat::RED . $this->deadQueue[$player->getName()] . " " . TextFormat::YELLOW . "seconds!");
+                         $player->sendTitle(TextFormat::RED . TextFormat::BOLD . "You died!", TextFormat::YELLOW . "You will respawn in: " . TextFormat::RED . $this->deadQueue[$player->getName()] . " " . TextFormat::YELLOW . "seconds!");
+                         $player->sendMessage(TextFormat::YELLOW . " §l§5» §r§eYou will respawn in: " . TextFormat::AQUA . $this->deadQueue[$player->getName()] . " " . TextFormat::YELLOW . "seconds!");
 
                          
                          if ($this->deadQueue[$player->getName()] == 0) {
                              unset($this->deadQueue[$player->getName()]);
 
                              $this->respawnPlayer($player);
-                             $player->sendTitle(TextFormat::GREEN . "RESPAWNED!");
-                             $player->sendMessage(TextFormat::YELLOW . "§l§5»§r§e You have respawned!");
+                             $player->sendTitle(TextFormat::GREEN . TextFormat::BOLD . "RESPAWNED!");
+                             $player->sendMessage(TextFormat::YELLOW . " §l§5»§r§e You have respawned!");
                              return;
                          }
                          $this->deadQueue[$player->getName()] -= 1;
