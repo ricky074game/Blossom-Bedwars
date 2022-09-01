@@ -31,7 +31,7 @@ use BedWars\game\entity\{Golem, Fireball, Bedbug};
 class BedWars extends PluginBase
 {
 
-    const PREFIX = TextFormat::BOLD . TextFormat::DARK_RED . "BedWars " . TextFormat::RESET;
+    const PREFIX = TextFormat::BOLD . TextFormat::DARK_RED . " " . TextFormat::RESET;
 
     /** @var Game[] $games */
     public $games = array();
