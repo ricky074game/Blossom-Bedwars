@@ -236,7 +236,7 @@ class GameListener implements Listener
 
             $playerTeam = $this->plugin->getPlayerTeam($player);
             if($playerTeam !== null){
-                $player->sendMessage(TextFormat::RED . "§l§9»§r §cYou are already in a team!");
+                $player->sendMessage(TextFormat::RED . " §l§9»§r §cYou are already in a team!");
                 return;
             }
 
@@ -248,7 +248,7 @@ class GameListener implements Listener
                         return;
                     }
                     $team->add($player);
-                    $player->sendMessage(TextFormat::GRAY . "§l§9» §r§aSuccessfully joined " . $teamColor . $team->getName() . TextFormat::YELLOW . " Team§6!");
+                    $player->sendMessage(TextFormat::GRAY . " §l§9» §r§aSuccessfully joined " . $teamColor . $team->getName() . TextFormat::YELLOW . " Team§6!");
                 }
             }
         }elseif($item->getId() == ItemIds::COMPASS){
@@ -347,7 +347,7 @@ class GameListener implements Listener
                     if($player->getPosition()->getY() < $game->getVoidLimit() && !$player->isSpectator()){
                         $game->killPlayer($player);
                         
-                        $game->broadcastMessage($playerTeam->getColor() . $player->getName() . " " . TextFormat::GRAY . "was killed by void");
+                        $game->broadcastMessage(" §l§e»§r" . $playerTeam->getColor() . $player->getName() . " " . TextFormat::GRAY . "jumped into the void");
                         $spawnPos = $game->teamInfo[$playerTeam->getName()]['SpawnPos'];
                         $spawn = Utils::stringToVector(":", $spawnPos);
                         $player->teleport(new Vector3($player->getPosition()->getX(), $spawn->getY() + 10, $player->getPosition()->getZ()));
@@ -450,7 +450,7 @@ class GameListener implements Listener
                     if($teamName !== ""){
                         $teamObject = $game->teams[$name];
                         if($teamName == $this->plugin->getPlayerTeam($player)->getName()){
-                            $player->sendMessage(TextFormat::RED . "§l§5» §r§cYou can't break your own bed!");
+                            $player->sendMessage(TextFormat::RED . " §l§5» §r§cYou can't break your own bed, silly!");
                             $event->cancel();
                             return;
                         }
@@ -583,7 +583,7 @@ class GameListener implements Listener
 
                         $playerTeam = $this->plugin->getPlayerTeam($damager)->getName();
                         if($npcTeam !== $playerTeam && $npcType == "upgrade"){
-                            $damager->sendMessage(TextFormat::RED . "§l§5»§c§r You can only upgrade at your island!");
+                            $damager->sendMessage(TextFormat::RED . " §l§5»§c§r You can only upgrade at your island!");
                             return;
                         }
 
@@ -608,7 +608,7 @@ class GameListener implements Listener
           $args = explode(" ", $event->getMessage());
 
           if($args[0] == '/fly' || isset($args[1]) && $args[1] == 'join'){
-              $player->sendMessage(TextFormat::RED . "§l§5» §r§cYou cannot run this in-game!");
+              $player->sendMessage(TextFormat::RED . " §l§5» §r§cYou cannot run this in-game!");
               $event->cancel();
           }
     }
