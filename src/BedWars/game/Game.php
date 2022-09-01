@@ -408,7 +408,7 @@ class Game
             if(isset($rotation[3])){
                 $entity->setRotation(intval($rotation[3]), 0);
             }
-            $entity->setNameTag(TextFormat::AQUA . TextFormat:BOLD . "§gUpgrades \n" . TextFormat::BOLD . TextFormat::RESET . "Click Me!");
+            $entity->setNameTag(TextFormat::AQUA . TextFormat::BOLD . "§gUpgrades \n" . TextFormat::BOLD . TextFormat::RESET . "Click Me!");
             $entity->setNameTagAlwaysVisible(true);
             $entity->spawnToAll();
 
