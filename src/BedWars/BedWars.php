@@ -26,7 +26,7 @@ use pocketmine\item\ItemIdentifier;
 use BedWars\game\Game;
 use BedWars\game\GameListener;
 use BedWars\game\Team;
-use BedWars\game\entity\{Golem, Fireball, Bedbug};
+use BedWars\game\entity\{Golem, Fireball};
 
 class BedWars extends PluginBase
 {
@@ -101,10 +101,7 @@ class BedWars extends PluginBase
         }, ["Egg"]);
         EntityFactory::getInstance()->register(Golem::class, function(World $world, CompoundTag $nbt) : Golem{
             return new Golem(EntityDataHelper::parseLocation($nbt, $world), $nbt);
-        }, ["Golem"]);
-        EntityFactory::getInstance()->register(Bedbug::class, function(World $world, CompoundTag $nbt) : Bedbug{
-            return new Bedbug(EntityDataHelper::parseLocation($nbt, $world), $nbt);
-        }, ["Bedbug"]);        
+        }, ["Golem"]);      
 
         //register items
         ItemFactory::getInstance()->register(new \BedWars\game\item\BridgeEgg(new ItemIdentifier(ItemIds::EGG, 0), "Bridge Egg"), true);
