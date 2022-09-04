@@ -258,7 +258,7 @@ class ItemShop
         $p->getArmorInventory()->setBoots($boots);
         $p->getArmorInventory()->setLeggings($leggings);
         $p->getArmorInventory()->setChestplate($chestplate);
-        $p->getArmorInventory()->setHelmet($helmet)
+        $p->getArmorInventory()->setHelmet($helmet);
         return true;
 
     }
