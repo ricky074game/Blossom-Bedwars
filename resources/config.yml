@@ -4,3 +4,7 @@ website: §dplayblossom.net
 start-time: 30
 #Time of countdown before game is restarted
 restart-time: 15
+Banned-Commands:
+- "hub"
+- "lobby"
+Banned-Command-Message: "You are not allowed to use this command in Bedwars!"
