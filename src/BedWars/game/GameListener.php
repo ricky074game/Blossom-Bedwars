@@ -574,6 +574,21 @@ class GameListener implements Listener
             }
         }
     }
+	
+    public function onCommandPreprocess(PlayerCommandPreprocessEvent $event) : void{
+          $player = $event->getPlayer();
+
+          $game = $this->plugin->getPlayerGame($player);
+
+          if($game == null)return;
+
+          $args = explode(" ", $event->getMessage());
+
+          if($args[0] == '/fly' || isset($args[1]) && $args[1] == 'join'){
+              $player->sendMessage(TextFormat::RED . " §l§5» §r§cYou cannot run this in-game!");
+              $event->cancel();
+          }
+    }
 
     public function onDrop(PlayerDropItemEvent $event){
         $player = $event->getPlayer();
