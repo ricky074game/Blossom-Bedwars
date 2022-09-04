@@ -34,7 +34,7 @@ use pocketmine\item\Item;
 use pocketmine\item\ItemIds;
 use pocketmine\entity\object\PrimedTNT;
 use BedWars\game\structure\popup_tower\PopupTower;
-use pocketmine\entity\projectile\Throwable
+use pocketmine\entity\projectile\Throwable;
 use pocketmine\entity\projectile\{Egg, Snowball};
 use BedWars\game\entity\{Fireball, Golem, Bedbug};
 use pocketmine\network\mcpe\protocol\ModalFormResponsePacket;
