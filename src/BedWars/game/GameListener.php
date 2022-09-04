@@ -29,12 +29,12 @@ use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\server\DataPacketReceiveEvent;
 use pocketmine\event\entity\EntityExplodeEvent;
 use pocketmine\event\player\PlayerExhaustEvent;
+use pocketmine\entity\projectile\Throwable;
 use pocketmine\event\entity\{ProjectileLaunchEvent, ProjectileHitEntityEvent};
 use pocketmine\item\Item;
 use pocketmine\item\ItemIds;
 use pocketmine\entity\object\PrimedTNT;
 use BedWars\game\structure\popup_tower\PopupTower;
-use pocketmine\entity\projectile\Throwable;
 use pocketmine\entity\projectile\{Egg, Snowball};
 use BedWars\game\entity\{Fireball, Golem, Bedbug};
 use pocketmine\network\mcpe\protocol\ModalFormResponsePacket;
@@ -56,7 +56,6 @@ use pocketmine\nbt\tag\ByteArrayTag;
 use pocketmine\nbt\tag\DoubleTag;
 use pocketmine\nbt\tag\FloatTag;
 use pocketmine\nbt\tag\ListTag;
-use pocketmine\entity\projectile\Throwable;
 
 class GameListener implements Listener
 {
