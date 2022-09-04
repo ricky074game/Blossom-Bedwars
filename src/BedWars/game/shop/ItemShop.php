@@ -223,6 +223,8 @@ class ItemShop
         $data = intval($data);
         $boots = "";
         $leggings = "";
+        $chesplate = "";
+        $helmet = "";
         if($team->getArmor($p) == array(0 => 'chain', 1 => 'iron', 2 => 'diamond')[$data]){
             $p->sendMessage(TextFormat::RED . "§l§5»§r§c You cannot purchase this twice!");
             return false;
