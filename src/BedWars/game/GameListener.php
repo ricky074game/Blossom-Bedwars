@@ -136,7 +136,6 @@ class GameListener implements Listener
     {
         $msg = $event->getMessage();
         $player = $event->getPlayer();
-	$dataPlayer = $this->getDataPlayer($player);
 
         $inGame = $dataPlayer->isInGame();
 
