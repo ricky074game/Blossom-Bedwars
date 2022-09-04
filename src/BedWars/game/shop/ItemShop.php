@@ -67,7 +67,6 @@ class ItemShop
             "§6Fireball\n§l§e50 IRON" => ["image" => "https://lh3.googleusercontent.com/LoRJx8LPqIMwmmRpQ9OFpv4OMgTKlbfLfRy_WW1TT06nsVVQEVIkNMOyfGRUMtgdSK4X2vYyXTU2mK1b6DOC6ldKCGeRP36zPy8=s400"],
             "§6TNT\n§l§e8 GOLD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/a2/TNT_JE3_BE2.png/revision/latest?cb=20210110120939"],
             "§6Enderpearl\n§l§e4 EMERALD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/f6/Ender_Pearl_JE3_BE2.png/revision/latest/scale-to-width-down/1200?cb=20200512195721"],
-            "§6Water Bucket\n§l§e1 EMERALD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/dc/Water_Bucket_JE2_BE2.png/revision/latest?cb=20190430112051"],
             "§6Bridge Egg\n§l§e4 EMERALD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/96/Egg_JE2_BE2.png/revision/latest?cb=20200512195802"],
             "§6Compact Popup-Tower\n§l§e24 IRON" => ["image" => "https://static.wikia.nocookie.net/minecraft/images/b/b3/Chest.png/revision/latest?cb=20191220013856"]],
         6 => ["§7Iron Axe\n§l§e8 GOLD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/5e/Iron_Axe_JE5_BE2.png/revision/latest?cb=20200217234438"],
@@ -107,13 +106,12 @@ class ItemShop
             2 => ["name" => "Invisibility Potion", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 1, "price" => 1, "item" => ["id" => ItemIds::POTION, "damage" => 8206]]
         ],
         5 => [0 => ["name" => "Golden Apple", "type" => self::PURCHASE_TYPE_GOLD, "amount" => 1, "price" => 3, "item" => ["id" => ItemIds::GOLDEN_APPLE, "damage" => 0]],
-            1 => ["name" => "Dream Defender", "type" => self::PURCHASE_TYPE_IRON, "amount" => 1, "price" => 122, "item" => ["id" => ItemIds::SPAWN_EGG, "damage" => 0]],   
+            1 => ["name" => "Dream Defender", "type" => self::PURCHASE_TYPE_IRON, "amount" => 1, "price" => 50, "item" => ["id" => ItemIds::SPAWN_EGG, "damage" => 0]],   
             2 => ["name" => "Fireball", "type" => self::PURCHASE_TYPE_IRON, "amount" => 1, "price" => 50, "item" => ["id" => ItemIds::FIRE_CHARGE, "damage" => 0]],
             3 => ["name" => "TNT", "type" => self::PURCHASE_TYPE_GOLD, "amount" => 1, "price" => 8, "item" => ["id" => ItemIds::TNT, "damage" => 0]],
             4 => ["name" => "Enderpearl", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 1, "price" => 4, "item" => ["id" => ItemIds::ENDER_PEARL, "damage" => 0]],
-            5 => ["name" => "Water Bucket", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 1, "price" => 1, "item" => ["id" => 326, "damage" => 0]],
-            6 => ["name" => "Bridge Egg", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 1, "price" => 4, "item" => ["id" => ItemIds::EGG, "damage" => 0, 'custom_name' => "§6Bridge Egg"]],
-            7 => ["name" => "Compact Popup-Tower", "type" => self::PURCHASE_TYPE_IRON, "amount" => 1, "price" => 24, "item" => ["id" => ItemIds::CHEST, "damage" => 0, "custom_name" => "§bPopup Tower"]]
+            5 => ["name" => "Bridge Egg", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 1, "price" => 4, "item" => ["id" => ItemIds::EGG, "damage" => 0, 'custom_name' => "§6Bridge Egg"]],
+            6 => ["name" => "Compact Popup-Tower", "type" => self::PURCHASE_TYPE_IRON, "amount" => 1, "price" => 24, "item" => ["id" => ItemIds::CHEST, "damage" => 0, "custom_name" => "§bPopup Tower"]]
         ],
         6 => [0 => ["name" => "Iron Axe", "type" => self::PURCHASE_TYPE_GOLD, "amount" => 1, "price" => 8, "item" => ["id" => ItemIds::IRON_AXE, "damage" => 0]],
             1 => ["name" => "Diamond Axe", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 1, "price" => 6, "item" => ["id" => ItemIds::DIAMOND_AXE, "damage" => 0]],
