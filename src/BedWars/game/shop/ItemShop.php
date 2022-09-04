@@ -43,8 +43,8 @@ class ItemShop
      */
     public static $shopPages = [
         0 => ["§6Chainmail Armor\n§l§e40 IRON" => ["image" => "https://lh3.googleusercontent.com/i8OJvH_x9a1SFd-F358jlCKe9KAXrpw0WO_22SuQRHWjLyFcOy0GFQyBFqlcENNEzXktnruwr71KBzP-j87zYg"],
-            "§6Iron Armor §c[PERMANENT]\n§l§e12 GOLD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/e0/Iron_Chestplate_%28item%29_JE2_BE2.png/revision/latest?cb=20190406141220"],
-            "§6Diamond Armor §c[PERMANENT]\n§l§e6 EMERALD" => ["image" => "https://www.seekpng.com/png/full/819-8194450_minecraft-diamond-chestplate-chestplate-minecraft.png"]],
+            "§6Iron Armor\n§l§e20 GOLD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/e0/Iron_Chestplate_%28item%29_JE2_BE2.png/revision/latest?cb=20190406141220"],
+            "§6Diamond Armor\n§l§e25 EMERALD" => ["image" => "https://www.seekpng.com/png/full/819-8194450_minecraft-diamond-chestplate-chestplate-minecraft.png"]],
         1 => ["§6Stone Sword\n§l§e10 IRON" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/b/b1/Stone_Sword_JE2_BE2.png/revision/latest/scale-to-width-down/160?cb=20200217235849"],
             "§6Iron Sword\n§l§e7 GOLD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/01/Iron_Sword_JE1_BE1.png/revision/latest?cb=20190516111355"],
             "§6Diamond Sword\n§l§e7 EMERALD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/6/6a/Diamond_Sword_JE2_BE2.png/revision/latest?cb=20200217235945"],
@@ -63,11 +63,11 @@ class ItemShop
             "§6Jump V Potion (45 sec.)\n§l§e1 EMERALD" => ["https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/22/Potion_of_Leaping_JE1_BE1.png/revision/latest?cb=20200108004444"],
             "§6Invisibility Potion (30 sec.)\n§l§e1 EMERALD" => ["https://static.wikia.nocookie.net/minecraft/images/b/bf/PotionOfSlowFallingNew.png/revision/latest?cb=20200116042148"]],
         5 => ["§6Golden Apple\n§l§e3 GOLD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/54/Golden_Apple_JE2_BE2.png/revision/latest?cb=20200521041809"],
-            "§6Bedbug\n§l§e50 IRON" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/2a/Snowball_JE3_BE3.png/revision/latest/scale-to-width-down/1200?cb=20190522005550"],
             "§6Dream Defender\n§l§e50 IRON" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/2a/Spawn_Egg_JE3_BE3.png/revision/latest/scale-to-width-down/1200?cb=20190522005550"],
             "§6Fireball\n§l§e50 IRON" => ["image" => "https://lh3.googleusercontent.com/LoRJx8LPqIMwmmRpQ9OFpv4OMgTKlbfLfRy_WW1TT06nsVVQEVIkNMOyfGRUMtgdSK4X2vYyXTU2mK1b6DOC6ldKCGeRP36zPy8=s400"],
             "§6TNT\n§l§e8 GOLD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/a2/TNT_JE3_BE2.png/revision/latest?cb=20210110120939"],
             "§6Enderpearl\n§l§e4 EMERALD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/f6/Ender_Pearl_JE3_BE2.png/revision/latest/scale-to-width-down/1200?cb=20200512195721"],
+            "§6Water Bucket\n§l§e1 EMERALD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/d/dc/Water_Bucket_JE2_BE2.png/revision/latest?cb=20190430112051"],
             "§6Bridge Egg\n§l§e4 EMERALD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/96/Egg_JE2_BE2.png/revision/latest?cb=20200512195802"],
             "§6Compact Popup-Tower\n§l§e24 IRON" => ["image" => "https://static.wikia.nocookie.net/minecraft/images/b/b3/Chest.png/revision/latest?cb=20191220013856"]],
         6 => ["§7Iron Axe\n§l§e8 GOLD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/5e/Iron_Axe_JE5_BE2.png/revision/latest?cb=20200217234438"],
@@ -82,8 +82,8 @@ class ItemShop
      */
     public static $itemData = [
         0 => [0 => ["name" => "Chainmail Armor", "type" => self::PURCHASE_TYPE_IRON, "amount" => 0, "price" => 40, "item" => ["id" => ItemIds::CHAIN_LEGGINGS, "damage" => 0]],
-            1 => ["name" => "Iron Armor", "type" => self::PURCHASE_TYPE_GOLD, "amount" => 0, "price" => 12, "item" => ["id" => ItemIds::IRON_LEGGINGS, "damage" => 0]],
-            2 => ["name" => "Diamond Armor ", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 0, "price" => 6, "item" => ["id" => ItemIds::DIAMOND_LEGGINGS, "damage" => 0]]
+            1 => ["name" => "Iron Armor", "type" => self::PURCHASE_TYPE_GOLD, "amount" => 0, "price" => 20, "item" => ["id" => ItemIds::IRON_LEGGINGS, "damage" => 0]],
+            2 => ["name" => "Diamond Armor ", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 0, "price" => 25, "item" => ["id" => ItemIds::DIAMOND_LEGGINGS, "damage" => 0]]
         ],
         1 => [0 => ["name" => "Stone Sword", "type" => self::PURCHASE_TYPE_IRON, "amount" => 1, "price" => 10, "item" => ["id" => ItemIds::STONE_SWORD, "damage" => 0]],
             1 => ["name" => "Iron Sword", "type" => self::PURCHASE_TYPE_GOLD, "amount" => 1, "price" => 7, "item" => ["id" => ItemIds::IRON_SWORD, "damage" => 0]],
@@ -107,14 +107,13 @@ class ItemShop
             2 => ["name" => "Invisibility Potion", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 1, "price" => 1, "item" => ["id" => ItemIds::POTION, "damage" => 8206]]
         ],
         5 => [0 => ["name" => "Golden Apple", "type" => self::PURCHASE_TYPE_GOLD, "amount" => 1, "price" => 3, "item" => ["id" => ItemIds::GOLDEN_APPLE, "damage" => 0]],
-            1 => ["name" => "Bedbug", "type" => self::PURCHASE_TYPE_IRON, "amount" => 1, "price" => 50, "item" => ["id" => ItemIds::SNOWBALL, "damage" => 0]], 
-            2 => ["name" => "Dream Defender", "type" => self::PURCHASE_TYPE_IRON, "amount" => 1, "price" => 122, "item" => ["id" => ItemIds::SPAWN_EGG, "damage" => 0]],   
-            3 => ["name" => "Fireball", "type" => self::PURCHASE_TYPE_IRON, "amount" => 1, "price" => 50, "item" => ["id" => ItemIds::FIRE_CHARGE, "damage" => 0]],
-            4 => ["name" => "TNT", "type" => self::PURCHASE_TYPE_GOLD, "amount" => 1, "price" => 8, "item" => ["id" => ItemIds::TNT, "damage" => 0]],
-            5 => ["name" => "Enderpearl", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 1, "price" => 4, "item" => ["id" => ItemIds::ENDER_PEARL, "damage" => 0]],
-            6 => ["name" => "Water Bucket", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 1, "price" => 1, "item" => ["id" => 326, "damage" => 0]],
-            7 => ["name" => "Bridge Egg", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 1, "price" => 4, "item" => ["id" => ItemIds::EGG, "damage" => 0, 'custom_name' => "§6Bridge Egg"]],
-            8 => ["name" => "Compact Popup-Tower", "type" => self::PURCHASE_TYPE_IRON, "amount" => 1, "price" => 24, "item" => ["id" => ItemIds::CHEST, "damage" => 0, "custom_name" => "§bPopup Tower"]]
+            1 => ["name" => "Dream Defender", "type" => self::PURCHASE_TYPE_IRON, "amount" => 1, "price" => 122, "item" => ["id" => ItemIds::SPAWN_EGG, "damage" => 0]],   
+            2 => ["name" => "Fireball", "type" => self::PURCHASE_TYPE_IRON, "amount" => 1, "price" => 50, "item" => ["id" => ItemIds::FIRE_CHARGE, "damage" => 0]],
+            3 => ["name" => "TNT", "type" => self::PURCHASE_TYPE_GOLD, "amount" => 1, "price" => 8, "item" => ["id" => ItemIds::TNT, "damage" => 0]],
+            4 => ["name" => "Enderpearl", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 1, "price" => 4, "item" => ["id" => ItemIds::ENDER_PEARL, "damage" => 0]],
+            5 => ["name" => "Water Bucket", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 1, "price" => 1, "item" => ["id" => 326, "damage" => 0]],
+            6 => ["name" => "Bridge Egg", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 1, "price" => 4, "item" => ["id" => ItemIds::EGG, "damage" => 0, 'custom_name' => "§6Bridge Egg"]],
+            7 => ["name" => "Compact Popup-Tower", "type" => self::PURCHASE_TYPE_IRON, "amount" => 1, "price" => 24, "item" => ["id" => ItemIds::CHEST, "damage" => 0, "custom_name" => "§bPopup Tower"]]
         ],
         6 => [0 => ["name" => "Iron Axe", "type" => self::PURCHASE_TYPE_GOLD, "amount" => 1, "price" => 8, "item" => ["id" => ItemIds::IRON_AXE, "damage" => 0]],
             1 => ["name" => "Diamond Axe", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 1, "price" => 6, "item" => ["id" => ItemIds::DIAMOND_AXE, "damage" => 0]],
