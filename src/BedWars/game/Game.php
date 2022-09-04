@@ -33,6 +33,7 @@ use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\nbt\tag\IntTag;
 use BedWars\BedWars;
 use BedWars\utils\Scoreboard;
+use pocketmine\entity\projectile\Throwable;
 
 class Game
 {
