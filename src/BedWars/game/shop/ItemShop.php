@@ -81,7 +81,7 @@ class ItemShop
      * @var array $itemData
      */
     public static $itemData = [
-        0 => [0 => ["name" => "Chainmal Armor", "type" => self::PURCHASE_TYPE_IRON, "amount" => 0, "price" => 40, "item" => ["id" => ItemIds::CHAIN_LEGGINGS, "damage" => 0]],
+        0 => [0 => ["name" => "Chainmail Armor", "type" => self::PURCHASE_TYPE_IRON, "amount" => 0, "price" => 40, "item" => ["id" => ItemIds::CHAIN_LEGGINGS, "damage" => 0]],
             1 => ["name" => "Iron Armor", "type" => self::PURCHASE_TYPE_GOLD, "amount" => 0, "price" => 12, "item" => ["id" => ItemIds::IRON_LEGGINGS, "damage" => 0]],
             2 => ["name" => "Diamond Armor ", "type" => self::PURCHASE_TYPE_EMERALD, "amount" => 0, "price" => 6, "item" => ["id" => ItemIds::DIAMOND_LEGGINGS, "damage" => 0]]
         ],
@@ -232,25 +232,33 @@ class ItemShop
             case 0;
                 $boots = ItemFactory::getInstance()->get(ItemIds::CHAIN_BOOTS, 0, 1);
                 $leggings = ItemFactory::getInstance()->get(ItemIds::CHAIN_LEGGINGS, 0, 1);
+                $chestplate = ItemFactory::getInstance()->get(ItemIds::CHAIN_CHESTPLATE, 0, 1);
+                $helmet = ItemFactory::getInstance()->get(ItemIds::CHAIN_HELMET, 0, 1);
                 $team->setArmor($p, 'chain');
                 break;
             case 1;
                 $boots = ItemFactory::getInstance()->get(ItemIds::IRON_BOOTS);
                 $leggings = ItemFactory::getInstance()->get(ItemIds::IRON_LEGGINGS);
+                $chestplate = ItemFactory::getInstance()->get(ItemIds::IRON_CHESTPLATE, 0, 1);
+                $helmet = ItemFactory::getInstance()->get(ItemIds::IRON_HELMET, 0, 1);
                 $team->setArmor($p, 'iron');
                 break;
             case 2;
                 $boots = ItemFactory::getInstance()->get(ItemIds::DIAMOND_BOOTS);
                 $leggings = ItemFactory::getInstance()->get(ItemIds::DIAMOND_LEGGINGS);
+                $chestplate = ItemFactory::getInstance()->get(ItemIds::DIAMOND_CHESTPLATE, 0, 1);
+                $helmet = ItemFactory::getInstance()->get(ItemIds::DIAMOND_HELMET, 0, 1);
                 $team->setArmor($p, 'diamond');
         }
         if(($enchLevel = $team->getUpgrade('armorProtection')) > 0){
-           foreach([$boots, $leggings] as $item){
+           foreach([$boots, $leggings, $chestplate, $helmet] as $item){
               $item->addEnchantment(new EnchantmentInstance(VanillaEnchantments::SHARPNESS(), $enchLevel));
            }
         }
         $p->getArmorInventory()->setBoots($boots);
         $p->getArmorInventory()->setLeggings($leggings);
+        $p->getArmorInventory()->setChestplate($chestplate);
+        $p->getArmorInventory()->setHelmet($helmet)
         return true;
 
     }
@@ -291,7 +299,7 @@ class ItemShop
      * @return bool
      */
     public static function isArmor(int $itemId){
-        $armors = [ItemIds::CHAIN_BOOTS, ItemIds::CHAIN_BOOTS, ItemIds::IRON_BOOTS, ItemIds::IRON_LEGGINGS, ItemIds::DIAMOND_BOOTS, ItemIds::DIAMOND_LEGGINGS];
+        $armors = [ItemIds::CHAIN_BOOTS, ItemIds::CHAIN_BOOTS, ItemIds::CHAIN_CHESTPLATE, ItemIds::CHAIN_HELMET, ItemIds::IRON_BOOTS, ItemIds::IRON_LEGGINGS, ItemIds::IRON_CHESTPLATE, ItemIds::IRON_HELMET, ItemIds::DIAMOND_BOOTS, ItemIds::DIAMOND_LEGGINGS, ItemIds::DIAMOND_CHESTPLATE, ItemIds::DIAMOND_HELMET];
         if(in_array($itemId, $armors)){
             return true;
         }
