@@ -131,24 +131,6 @@ class GameListener implements Listener
     		}
     	}
     }
-	
-  public function onCommandPreprocess(PlayerCommandPreprocessEvent $event)
-    {
-        $msg = $event->getMessage();
-        $player = $event->getPlayer();
-
-        $inGame = $player->isInGame();
-
-        if (!$inGame) return;
-
-        $cmd = explode(" ", $msg)[0];
-
-        if (in_array($cmd, $this->plugin->getConfig()->get("Banned-Commands"))) {
-            $player->sendMessage($this->plugin->getConfig()->get("Banned-Command-Message"));
-            $event->cancel();
-        }
-    }
-	
 
     public function onExhaust(PlayerExhaustEvent $ev) : void{
         $player = $ev->getPlayer();
