@@ -161,33 +161,10 @@ class GameListener implements Listener
         $ev->setBlockList($newList);
     }
 	
-    public function projectileLaunchevent(ProjectileLaunchEvent $event)
-    {
-        $pro = $event->getEntity();
-        $player = $pro->getOwningEntity();
-        $playerGame = $this->plugin->getPlayerGame($player);
-        if ($player instanceof Player) {
-            if ($playerGame !== null) {
-                if ($pro instanceof Snowball) {
-                    $this->spawnBedbug($pro->getPosition()->asVector3(), $player->getWorld(), $player);
-                }
-            }
-        }
-    }
-	
     public function spawnGolem($pos, $world, $player)
     {
         $nbt = $this->createBaseNBT($pos);
         $entity = new Golem($world, $nbt);
-        $entity->arena = $this;
-        $entity->owner = $player;
-        $entity->spawnToAll();
-    }
-
-    public function spawnBedbug($pos, $world, $player)
-    {
-        $nbt = $this->createBaseNBT($pos);
-        $entity = new Bedbug($world, $nbt);
         $entity->arena = $this;
         $entity->owner = $player;
         $entity->spawnToAll();
