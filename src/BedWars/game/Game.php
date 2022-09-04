@@ -429,7 +429,7 @@ class Game
          $player->teleport($this->lobby);
          $this->players[$player->getName()] = $player;
 
-         $this->broadcastMessage(TextFormat::GRAY . TextFormat::BOLD .  " §l§3»§r " . TextFormat::RESET . TextFormat::AQUA . $player->getName() . TextFormat::YELLOW . " has joined " . TextFormat::GOLD . "(" . TextFormat::AQUA .  count($this->players) . TextFormat::YELLOW . "/" . TextFormat::AQUA .  $this->maxPlayers . TextFormat::GOLD .  ")");
+         $this->broadcastMessage(TextFormat::GRAY . TextFormat::BOLD .  " §l§3»§r " . TextFormat::RESET . TextFormat::AQUA . $player->getName() . TextFormat::YELLOW . " has joined " . TextFormat::GOLD . "(" . TextFormat::AQUA .  count($this->players) . TextFormat::YELLOW . "/" . TextFormat::AQUA .  $this->maxPlayers . TextFormat::GOLD .  ")");
          $player->getInventory()->clearAll();
          $player->getArmorInventory()->clearAll();
          $player->getCraftingGrid()->clearAll();
@@ -485,7 +485,7 @@ class Game
         foreach($player->getInventory()->getContents() as $slot => $item){
             if($item instanceof Compass){
                 $player->getInventory()->removeItem($item);
-                $player->getInventory()->setItem($slot, ItemFactory::getInstance()->get(ItemIds::COMPASS)->setCustomName(TextFormat::WHITE . "Tap to switch!"));
+                $player->getInventory()->setItem($slot, ItemFactory::getInstance()->get(ItemIds::COMPASS)->setCustomName(TextFormat::WHITE . "Tap to switch team!"));
             }
         }
     }
@@ -499,7 +499,7 @@ class Game
 
         $playerTeam = $this->plugin->getPlayerTeam($player);
 
-        $this->broadcastMessage(TextFormat::BOLD . TextFormat::RED . " §5» " . TextFormat::RESET .  $team->getColor() . $team->getName() . "'s " . TextFormat::GRAY . "bed was destroyed by " . $playerTeam->getColor() . $player->getName());
+        $this->broadcastMessage(TextFormat::BOLD . TextFormat::RED . " §l§5» " . TextFormat::RESET .  $team->getColor() . $team->getName() . "'s " . TextFormat::GRAY . "bed was destroyed by " . $playerTeam->getColor() . $player->getName());
         foreach($team->getPlayers() as $player){
             $player->sendTitle(TextFormat::RED . TextFormat::BOLD . "BED DESTROYED!", TextFormat::GRAY . "You will no longer respawn!", 10);
         }
@@ -650,14 +650,20 @@ class Game
             case "chain";
             $boots = ItemFactory::getInstance()->get(ItemIds::CHAIN_BOOTS, 0, 1);
             $leggings = ItemFactory::getInstance()->get(ItemIds::CHAIN_LEGGINGS, 0, 1);
+            $chestplate = ItemFactory::getInstance()->get(ItemIds::CHAIN_chestplate, 0, 1);
+            $helmet = ItemFactory::getInstance()->get(ItemIds::CHAIN_helmet, 0, 1);
             break;
             case "iron";
             $leggings = ItemFactory::getInstance()->get(ItemIds::IRON_LEGGINGS);
             $boots = ItemFactory::getInstance()->get(ItemIds::IRON_BOOTS);
+            $chestplate = ItemFactory::getInstance()->get(ItemIds::IRON_chestplate, 0, 1);
+            $helmet = ItemFactory::getInstance()->get(ItemIds::IRON_helmet, 0, 1);
             break;
             case "diamond";
             $leggings = ItemFactory::getInstance()->get(ItemIds::DIAMOND_LEGGINGS);
             $boots = ItemFactory::getInstance()->get(ItemIds::DIAMOND_BOOTS);
+            $chestplate = ItemFactory::getInstance()->get(ItemIds::DIAMOND_chestplate, 0, 1);
+            $helmet = ItemFactory::getInstance()->get(ItemIds::DIAMOND_helmet, 0, 1);
             break;
             default;
             $hasArmorUpdated = false;
@@ -694,7 +700,7 @@ class Game
         }
 
         $player->getInventory()->setItem(0, $sword);
-        $player->getInventory()->setItem(8, ItemFactory::getInstance()->get(ItemIds::COMPASS)->setCustomName(TextFormat::WHITE . "Tap to switch!"));
+        $player->getInventory()->setItem(8, ItemFactory::getInstance()->get(ItemIds::COMPASS)->setCustomName(TextFormat::WHITE . "Tap to switch team!"));
 
     }
 
