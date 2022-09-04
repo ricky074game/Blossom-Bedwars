@@ -29,7 +29,6 @@ use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\server\DataPacketReceiveEvent;
 use pocketmine\event\entity\EntityExplodeEvent;
 use pocketmine\event\player\PlayerExhaustEvent;
-use pocketmine\entity\projectile\Throwable;
 use pocketmine\event\entity\{ProjectileLaunchEvent, ProjectileHitEntityEvent};
 use pocketmine\item\Item;
 use pocketmine\item\ItemIds;
