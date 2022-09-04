@@ -29,6 +29,7 @@ use pocketmine\event\player\PlayerQuitEvent;
 use pocketmine\event\server\DataPacketReceiveEvent;
 use pocketmine\event\entity\EntityExplodeEvent;
 use pocketmine\event\player\PlayerExhaustEvent;
+use pocketmine\event\entity\{ProjectileLaunchEvent, ProjectileHitEntityEvent};
 use pocketmine\item\Item;
 use pocketmine\item\ItemIds;
 use pocketmine\entity\object\PrimedTNT;
