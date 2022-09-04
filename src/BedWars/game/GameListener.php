@@ -132,9 +132,6 @@ class GameListener implements Listener
     	}
     }
 	
-    /**
-     * @param PlayerCommandPreprocessEvent $event
-     */
   public function onCommandPreprocess(PlayerCommandPreprocessEvent $event)
     {
         $msg = $event->getMessage();
