@@ -65,6 +65,7 @@ class ItemShop
         5 => ["§6Golden Apple\n§l§e3 GOLD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/5/54/Golden_Apple_JE2_BE2.png/revision/latest?cb=20200521041809"],
             "§6Bedbug\n§l§e50 IRON" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/2a/Snowball_JE3_BE3.png/revision/latest/scale-to-width-down/1200?cb=20190522005550"],
             "§6Dream Defender\n§l§e50 IRON" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/2a/Spawn_Egg_JE3_BE3.png/revision/latest/scale-to-width-down/1200?cb=20190522005550"],
+            "§6Fireball\n§l§e50 IRON" => ["image" => "https://lh3.googleusercontent.com/LoRJx8LPqIMwmmRpQ9OFpv4OMgTKlbfLfRy_WW1TT06nsVVQEVIkNMOyfGRUMtgdSK4X2vYyXTU2mK1b6DOC6ldKCGeRP36zPy8=s400"],
             "§6TNT\n§l§e8 GOLD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/a/a2/TNT_JE3_BE2.png/revision/latest?cb=20210110120939"],
             "§6Enderpearl\n§l§e4 EMERALD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/f/f6/Ender_Pearl_JE3_BE2.png/revision/latest/scale-to-width-down/1200?cb=20200512195721"],
             "§6Bridge Egg\n§l§e4 EMERALD" => ["image" => "https://static.wikia.nocookie.net/minecraft_gamepedia/images/9/96/Egg_JE2_BE2.png/revision/latest?cb=20200512195802"],
