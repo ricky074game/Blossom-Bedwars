@@ -137,10 +137,6 @@ class GameListener implements Listener
         $msg = $event->getMessage();
         $player = $event->getPlayer();
 
-        $inGame = $dataPlayer->isInGame();
-
-        if (!$inGame) return;
-
         $cmd = explode(" ", $msg)[0];
 
         if (in_array($cmd, $this->plugin->getConfig()->get("Banned-Commands"))) {
