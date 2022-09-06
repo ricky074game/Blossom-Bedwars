@@ -109,11 +109,7 @@ class BridgeEgg extends Egg{
 	 * Called when the projectile collides with an Entity.
 	 */
 	protected function onHitEntity(Entity $entityHit, RayTraceResult $hitResult) : void{
-		if(!$this->isNotBE){
-			return;
-		}
 		$damage = $this->getResultDamage();
-
 		if($damage >= 0){
 			if($this->getOwningEntity() === null){
 				$ev = new EntityDamageByEntityEvent($this, $entityHit, EntityDamageEvent::CAUSE_PROJECTILE, $damage);
