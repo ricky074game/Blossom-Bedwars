@@ -2,7 +2,7 @@
 build-by-default: true
 branches: 
 - master
-projects:
+projects: 
   BedWarsUltimate:
     path: ""
     libs:
