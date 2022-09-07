@@ -286,6 +286,18 @@ class Game
         }
         return $teams;
     }
+    
+    public function checkModessss(){
+        if($this->getState() == self::STATE_GAME){
+            foreach($this->players as $player){
+               if($player instanceof Player){
+                   $player->getInventory()->clearAll();
+                   $player->getArmorInventory()->clearAll();
+                   $player->getCursorInventory()->clearAll();
+               }
+            }
+        }
+    }
 
     public function stop() : void{
         foreach(array_merge($this->players, $this->spectators) as $player){

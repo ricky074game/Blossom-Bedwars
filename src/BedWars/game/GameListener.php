@@ -584,7 +584,7 @@ class GameListener implements Listener
 
           $args = explode(" ", $event->getMessage());
 
-          if($args[0] == '/fly' || isset($args[1]) && $args[1] == 'join'){
+          if(in_array($cmd, $this->plugin->getConfig()->get("Banned-Commands"))) {
               $player->sendMessage(TextFormat::RED . " §l§5» §r§cYou cannot run this in-game!");
               $event->cancel();
           }
