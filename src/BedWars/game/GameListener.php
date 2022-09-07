@@ -469,7 +469,7 @@ class GameListener implements Listener
                 $isCancelled = false;
                 foreach($playerGame->teamInfo as $team => $data){
                     $spawn = Utils::stringToVector(":", $data['SpawnPos']);
-                    if($spawn->distance($event->getBlock()->getPosition()->asVector3()) < 3){
+                    if($spawn->distance($event->getBlock()->getPosition()->asVector3()) < 2){
                         $event->cancel();
                         $isCancelled = true;
                     }else{
